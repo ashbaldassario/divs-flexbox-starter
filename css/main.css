@@ -97,46 +97,74 @@ textarea {
 
 
 html {
-  background-color: #222;
-  height: 100%;
+    background-color: #222;
+    height: 100%;
+    width: 100%;
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  padding: 2em;
-  font-size: 1.25em;
-  height: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0em 2em;
+    font-size: 1.25em;
+    display: flex;
+    justify-content: center;
+    color: rgb(226, 224, 224);
 }
 
 .wrapper {
-  /*add display:flex and set justify-content to space-between*/
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  font-weight: 700;
+    /*add display:flex and set justify-content to space-between*/
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      font-weight: 400;  
+      max-width: 1200px;
+  }  
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
 }
 
-.div-1, .div-2, .div-3 {
+header h1 {
+    font-size: 3em;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.8em;
+    border-bottom: 1px solid rgb(206, 221, 221)
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.2em;
+    border-top: 1px solid rgb(206, 221, 221)
+}
+  
+.about-me {
   /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgb(226, 224, 224);
-  line-height: 1.5em;
-  font-size: 1.6em;
-  height: 300px;
-  width: 30%;
-}
-
-.div-1, .div-2 {
-    border-right: 3px solid teal; 
-    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5em;
+    font-size: 1.2em;
+    border-bottom: 1px solid teal;
 }
 
 .wrapper span {
-    font-family: 'Lora', sans-serif;
+    font-family: 'Courier Prime', monospace;
     font-size: 1.1em;
-  }
+}
+
+footer p {
+    padding: 30px;
+}
 
 /* ==========================================================================
    Helper classes
@@ -217,6 +245,25 @@ body {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+   @media all and (max-width: 768px) {
+    body {
+      padding: 1em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .about-me {
+      flex-basis: 30%;
+      border-bottom: none;
+    }
+
+    #div-2 p {
+      border-left: 1px solid teal;
+      border-right: 1px solid teal;
+      padding: 0 40px;
+    }
+}
+
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
